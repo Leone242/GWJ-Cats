@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmtfid4rnepey"]
+
+[ext_resource type="Texture2D" path="res://placeholders/Grass.png" id="1_2eeet"]
+[ext_resource type="Texture2D" path="res://placeholders/big-crate.png" id="2_xkwug"]
+[ext_resource type="Texture2D" path="res://placeholders/Bush.png" id="3_7m4iy"]
+[ext_resource type="Texture2D" path="res://placeholders/Rock.png" id="4_r1sm1"]
+[ext_resource type="Texture2D" path="res://placeholders/Sign.png" id="5_jpt81"]
+[ext_resource type="Texture2D" path="res://placeholders/Tree.png" id="6_oti2f"]
+[ext_resource type="Texture2D" path="res://placeholders/Tree_top.png" id="7_shfnv"]
+[ext_resource type="Texture2D" path="res://placeholders/Tree_trunk.png" id="8_gt22x"]
+[ext_resource type="PackedScene" uid="uid://b53qu76ht03nn" path="res://Player.tscn" id="9_d43om"]
+
+[node name="World" type="Node2D"]
+show_behind_parent = true
+
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(589, 339.5)
+scale = Vector2(76.375, 45.1875)
+texture = ExtResource("1_2eeet")
+
+[node name="Node2D" type="CanvasGroup" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Big-crate" type="Sprite2D" parent="Node2D"]
+position = Vector2(393, 175)
+texture = ExtResource("2_xkwug")
+
+[node name="Bush" type="Sprite2D" parent="Node2D"]
+position = Vector2(204, 274)
+texture = ExtResource("3_7m4iy")
+
+[node name="Rock" type="Sprite2D" parent="Node2D"]
+position = Vector2(350, 334)
+texture = ExtResource("4_r1sm1")
+
+[node name="Sign" type="Sprite2D" parent="Node2D"]
+position = Vector2(195, 158)
+texture = ExtResource("5_jpt81")
+
+[node name="Tree" type="Sprite2D" parent="Node2D"]
+position = Vector2(266, 101)
+texture = ExtResource("6_oti2f")
+
+[node name="Tree2" type="Sprite2D" parent="Node2D"]
+position = Vector2(504, 80)
+texture = ExtResource("6_oti2f")
+
+[node name="TreeTop" type="Sprite2D" parent="Node2D"]
+position = Vector2(290, 226)
+texture = ExtResource("7_shfnv")
+
+[node name="TreeTrunk" type="Sprite2D" parent="Node2D"]
+position = Vector2(414, 286)
+texture = ExtResource("8_gt22x")
+
+[node name="Sign2" type="Sprite2D" parent="Node2D"]
+position = Vector2(141, 530)
+texture = ExtResource("5_jpt81")
+
+[node name="Sign3" type="Sprite2D" parent="Node2D"]
+position = Vector2(305, 618)
+texture = ExtResource("5_jpt81")
+
+[node name="Sign4" type="Sprite2D" parent="Node2D"]
+position = Vector2(8, 226)
+texture = ExtResource("5_jpt81")
+
+[node name="Sign5" type="Sprite2D" parent="Node2D"]
+position = Vector2(1139, 600)
+texture = ExtResource("5_jpt81")
+
+[node name="Sign6" type="Sprite2D" parent="Node2D"]
+position = Vector2(1141, 148)
+texture = ExtResource("5_jpt81")
+
+[node name="Sign7" type="Sprite2D" parent="Node2D"]
+position = Vector2(1006, 19)
+texture = ExtResource("5_jpt81")
+
+[node name="Tree3" type="Sprite2D" parent="Node2D"]
+position = Vector2(532, 403)
+texture = ExtResource("6_oti2f")
+
+[node name="Tree4" type="Sprite2D" parent="Node2D"]
+position = Vector2(652, 534)
+texture = ExtResource("6_oti2f")
+
+[node name="Tree5" type="Sprite2D" parent="Node2D"]
+position = Vector2(332, 495)
+texture = ExtResource("6_oti2f")
+
+[node name="Tree6" type="Sprite2D" parent="Node2D"]
+position = Vector2(832, 383)
+texture = ExtResource("6_oti2f")
+
+[node name="Tree7" type="Sprite2D" parent="Node2D"]
+position = Vector2(1021, 211)
+texture = ExtResource("6_oti2f")
+
+[node name="Tree8" type="Sprite2D" parent="Node2D"]
+position = Vector2(796, 158)
+texture = ExtResource("6_oti2f")
+
+[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("9_d43om")]
+position = Vector2(235, 159)
