@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmtfid4rnepey"]
+[gd_scene load_steps=11 format=3 uid="uid://bmtfid4rnepey"]
 
-[ext_resource type="Texture2D" path="res://placeholders/Grass.png" id="1_2eeet"]
-[ext_resource type="Texture2D" path="res://placeholders/big-crate.png" id="2_xkwug"]
-[ext_resource type="Texture2D" path="res://placeholders/Bush.png" id="3_7m4iy"]
-[ext_resource type="Texture2D" path="res://placeholders/Rock.png" id="4_r1sm1"]
-[ext_resource type="Texture2D" path="res://placeholders/Sign.png" id="5_jpt81"]
-[ext_resource type="Texture2D" path="res://placeholders/Tree.png" id="6_oti2f"]
-[ext_resource type="Texture2D" path="res://placeholders/Tree_top.png" id="7_shfnv"]
-[ext_resource type="Texture2D" path="res://placeholders/Tree_trunk.png" id="8_gt22x"]
+[ext_resource type="Texture2D" uid="uid://b3srnoyrnnrgh" path="res://placeholders/Grass.png" id="1_2eeet"]
+[ext_resource type="Texture2D" uid="uid://b6wcry7i3143h" path="res://placeholders/big-crate.png" id="2_xkwug"]
+[ext_resource type="Texture2D" uid="uid://bngt1la3wj7s6" path="res://placeholders/Bush.png" id="3_7m4iy"]
+[ext_resource type="Texture2D" uid="uid://co4gkx7j5k5b2" path="res://placeholders/Rock.png" id="4_r1sm1"]
+[ext_resource type="Texture2D" uid="uid://d1y7vv3qf3r43" path="res://placeholders/Sign.png" id="5_jpt81"]
+[ext_resource type="Texture2D" uid="uid://5mt5io7mrcim" path="res://placeholders/Tree.png" id="6_oti2f"]
+[ext_resource type="Texture2D" uid="uid://cdy5fq3h8ob8q" path="res://placeholders/Tree_top.png" id="7_shfnv"]
+[ext_resource type="Texture2D" uid="uid://cbryadhie7fc1" path="res://placeholders/Tree_trunk.png" id="8_gt22x"]
 [ext_resource type="PackedScene" uid="uid://b53qu76ht03nn" path="res://Player.tscn" id="9_d43om"]
+[ext_resource type="PackedScene" uid="uid://muwc4vmjpsl2" path="res://dog.tscn" id="10_3at7o"]
 
 [node name="World" type="Node2D"]
 show_behind_parent = true
@@ -102,5 +103,8 @@ texture = ExtResource("6_oti2f")
 position = Vector2(796, 158)
 texture = ExtResource("6_oti2f")
 
-[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("9_d43om")]
+[node name="Player" parent="Node2D" instance=ExtResource("9_d43om")]
 position = Vector2(235, 159)
+
+[node name="Dog" parent="." instance=ExtResource("10_3at7o")]
+position = Vector2(742, 229)
