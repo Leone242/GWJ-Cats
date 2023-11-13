@@ -22,6 +22,13 @@ func _physics_process(delta):
 		input_vector = input_vector.normalized()
 		position += input_vector * speed * delta
 		move_and_slide()
+		
+func _process(delta):
+	if Input.is_action_just_pressed("meow"):
+		print("meow")
+	if Input.is_action_just_pressed("interact"):
+		print("interact")
+
 
 func show_animation(anim_sprite):
 	get_node("idle").hide()
