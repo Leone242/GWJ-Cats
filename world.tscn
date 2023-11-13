@@ -1,21 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmtfid4rnepey"]
+[gd_scene load_steps=10 format=3 uid="uid://bmtfid4rnepey"]
 
 [ext_resource type="Texture2D" uid="uid://b3srnoyrnnrgh" path="res://placeholders/Grass.png" id="1_2eeet"]
-[ext_resource type="Texture2D" uid="uid://b6wcry7i3143h" path="res://placeholders/big-crate.png" id="2_xkwug"]
 [ext_resource type="Texture2D" uid="uid://bngt1la3wj7s6" path="res://placeholders/Bush.png" id="3_7m4iy"]
 [ext_resource type="Texture2D" uid="uid://co4gkx7j5k5b2" path="res://placeholders/Rock.png" id="4_r1sm1"]
 [ext_resource type="Texture2D" uid="uid://d1y7vv3qf3r43" path="res://placeholders/Sign.png" id="5_jpt81"]
 [ext_resource type="Texture2D" uid="uid://5mt5io7mrcim" path="res://placeholders/Tree.png" id="6_oti2f"]
-[ext_resource type="Texture2D" uid="uid://cdy5fq3h8ob8q" path="res://placeholders/Tree_top.png" id="7_shfnv"]
 [ext_resource type="Texture2D" uid="uid://cbryadhie7fc1" path="res://placeholders/Tree_trunk.png" id="8_gt22x"]
+[ext_resource type="PackedScene" uid="uid://b6qw4msyr5te8" path="res://hideout.tscn" id="9_7y4ld"]
 [ext_resource type="PackedScene" uid="uid://b53qu76ht03nn" path="res://Player.tscn" id="9_d43om"]
 [ext_resource type="PackedScene" uid="uid://muwc4vmjpsl2" path="res://dog.tscn" id="10_3at7o"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2scl"]
-size = Vector2(28, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51dc8"]
-size = Vector2(28, 20)
 
 [node name="World" type="Node2D"]
 show_behind_parent = true
@@ -48,10 +41,6 @@ texture = ExtResource("6_oti2f")
 [node name="Tree2" type="Sprite2D" parent="Node2D"]
 position = Vector2(504, 80)
 texture = ExtResource("6_oti2f")
-
-[node name="TreeTop" type="Sprite2D" parent="Node2D"]
-position = Vector2(290, 226)
-texture = ExtResource("7_shfnv")
 
 [node name="TreeTrunk" type="Sprite2D" parent="Node2D"]
 position = Vector2(414, 286)
@@ -108,26 +97,26 @@ texture = ExtResource("6_oti2f")
 [node name="Player" parent="Node2D" instance=ExtResource("9_d43om")]
 position = Vector2(235, 159)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-y_sort_enabled = true
+[node name="StaticBody2D" parent="Node2D" instance=ExtResource("9_7y4ld")]
+position = Vector2(400, 166)
 
-[node name="Big-crate" type="Sprite2D" parent="Node2D/StaticBody2D"]
-position = Vector2(393, 175)
-texture = ExtResource("2_xkwug")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-visible = false
-position = Vector2(393, 186)
-shape = SubResource("RectangleShape2D_u2scl")
-
-[node name="Area2D" type="Area2D" parent="Node2D/StaticBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D/Area2D"]
-position = Vector2(393, 174)
-shape = SubResource("RectangleShape2D_51dc8")
+[node name="StaticBody2D2" parent="Node2D" instance=ExtResource("9_7y4ld")]
+position = Vector2(286, 254)
 
 [node name="Dog" parent="." instance=ExtResource("10_3at7o")]
-position = Vector2(742, 229)
+position = Vector2(750, 210)
 
-[connection signal="body_entered" from="Node2D/StaticBody2D/Area2D" to="Node2D/Player" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Node2D/StaticBody2D/Area2D" to="Node2D/Player" method="_on_area_2d_body_exited"]
+[node name="OriginPosition" type="Marker2D" parent="."]
+position = Vector2(750, 210)
+
+[node name="SecondPosition" type="Marker2D" parent="."]
+position = Vector2(1037, 259)
+
+[node name="OrgnPosTimer" type="Timer" parent="."]
+wait_time = 2.807
+
+[node name="SecPosTimer" type="Timer" parent="."]
+wait_time = 3.194
+
+[connection signal="timeout" from="OrgnPosTimer" to="Dog" method="_on_orgn_pos_timer_timeout"]
+[connection signal="timeout" from="SecPosTimer" to="Dog" method="_on_sec_pos_timer_timeout"]

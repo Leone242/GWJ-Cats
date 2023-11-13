@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://brdhy31rpihe0" path="res://placeholders/Cat-01-3r.png" id="1_dkuyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejpva"]
-size = Vector2(21, 19)
+size = Vector2(21, 13)
 
 [sub_resource type="Animation" id="Animation_hpuy6"]
 length = 0.001
@@ -247,7 +247,7 @@ load_path = "res://.godot/imported/Cat-01-3r.png-10d8c1c35abdb8751ce39c585531c63
 script = ExtResource("1_25it2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 4.5)
+position = Vector2(0.5, 7.5)
 shape = SubResource("RectangleShape2D_ejpva")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
