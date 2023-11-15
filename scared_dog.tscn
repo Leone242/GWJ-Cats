@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf1smogcvbqfj"]
+
+[ext_resource type="PackedScene" uid="uid://muwc4vmjpsl2" path="res://dog.tscn" id="1_um8al"]
+
+[sub_resource type="Curve2D" id="Curve2D_s7f38"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 770, 217, -42.9083, -50.8542, 42.9083, 50.8542, 1061, 217, 64.0975, -25.9568, -64.0975, 25.9568, 1029, 371, 26.4866, 60.9191, -26.4866, -60.9191, 681, 298, 0, 0, 0, 0, 770, 217)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_s7f38")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(770, 217)
+rotates = false
+
+[node name="Dog" parent="PathFollow2D" instance=ExtResource("1_um8al")]
+
+[node name="_Timer_23058" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true
