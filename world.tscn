@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbryadhie7fc1" path="res://placeholders/Tree_trunk.png" id="8_gt22x"]
 [ext_resource type="PackedScene" uid="uid://b6qw4msyr5te8" path="res://hideout.tscn" id="9_7y4ld"]
 [ext_resource type="PackedScene" uid="uid://b53qu76ht03nn" path="res://Player.tscn" id="9_d43om"]
-[ext_resource type="PackedScene" uid="uid://8gtg5rhun1mg" path="res://dog_nav.tscn" id="9_qrni3"]
+[ext_resource type="PackedScene" uid="uid://cw2iyiw1f84vl" path="res://lazy_dog.tscn" id="9_g8br4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ltdpr"]
 vertices = PackedVector2Array(-130, 32, 372, 49, 346, 325, -239, 297)
@@ -120,9 +120,9 @@ position = Vector2(952, 255)
 [node name="Marker2D4" type="Marker2D" parent="." groups=["auau"]]
 position = Vector2(667, 237)
 
-[node name="dog_nav" parent="." instance=ExtResource("9_qrni3")]
-position = Vector2(670, 240)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(673, 148)
 navigation_polygon = SubResource("NavigationPolygon_ltdpr")
+
+[node name="LazyDog" parent="." instance=ExtResource("9_g8br4")]
+position = Vector2(667, 237)
