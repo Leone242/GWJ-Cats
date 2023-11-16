@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br7yvn0n3jn7k"]
+[gd_scene load_steps=13 format=3 uid="uid://br7yvn0n3jn7k"]
 
 [ext_resource type="Texture2D" uid="uid://b3srnoyrnnrgh" path="res://placeholders/Grass.png" id="1_2eeet"]
 [ext_resource type="Texture2D" uid="uid://bngt1la3wj7s6" path="res://placeholders/Bush.png" id="3_7m4iy"]
@@ -13,6 +13,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kui8g"]
 size = Vector2(26, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lao5k"]
+size = Vector2(2.9375, 31.5)
 
 [node name="World" type="Node2D"]
 show_behind_parent = true
@@ -125,12 +128,21 @@ position = Vector2(667, 237)
 [node name="LazyDog" parent="." instance=ExtResource("9_g8br4")]
 position = Vector2(667, 237)
 
-[node name="Chest" type="Sprite2D" parent="."]
+[node name="Chest" type="Node2D" parent="."]
 position = Vector2(675, 244)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chest"]
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("10_lo1gm")
 hframes = 6
 frame = 5
 
+[node name="DogHouse" type="Area2D" parent="Chest"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/DogHouse"]
+position = Vector2(0.53125, 1.75)
+shape = SubResource("RectangleShape2D_lao5k")
+
 [connection signal="body_entered" from="Node2D/StaticBody2D/Area2D2" to="Node2D/Player" method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Node2D/StaticBody2D/Area2D2" to="Node2D/Player" method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="Chest/DogHouse" to="LazyDog" method="_on_dog_house_body_entered"]
