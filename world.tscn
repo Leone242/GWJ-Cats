@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://br7yvn0n3jn7k"]
+[gd_scene load_steps=12 format=3 uid="uid://br7yvn0n3jn7k"]
 
 [ext_resource type="Texture2D" uid="uid://b3srnoyrnnrgh" path="res://placeholders/Grass.png" id="1_2eeet"]
 [ext_resource type="Texture2D" uid="uid://bngt1la3wj7s6" path="res://placeholders/Bush.png" id="3_7m4iy"]
@@ -9,11 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://b6qw4msyr5te8" path="res://hideout.tscn" id="9_7y4ld"]
 [ext_resource type="PackedScene" uid="uid://b53qu76ht03nn" path="res://Player.tscn" id="9_d43om"]
 [ext_resource type="PackedScene" uid="uid://cw2iyiw1f84vl" path="res://lazy_dog.tscn" id="9_g8br4"]
+[ext_resource type="Texture2D" uid="uid://dktycf6fivq4x" path="res://placeholders/Chest.png" id="10_lo1gm"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ltdpr"]
-vertices = PackedVector2Array(-130, 32, 372, 49, 346, 325, -239, 297)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-130, 32, 372, 49, 346, 325, -239, 297)])
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kui8g"]
+size = Vector2(26, 21)
 
 [node name="World" type="Node2D"]
 show_behind_parent = true
@@ -105,8 +104,11 @@ position = Vector2(235, 159)
 [node name="StaticBody2D" parent="Node2D" instance=ExtResource("9_7y4ld")]
 position = Vector2(400, 166)
 
-[node name="StaticBody2D2" parent="Node2D" instance=ExtResource("9_7y4ld")]
-position = Vector2(286, 254)
+[node name="Area2D2" type="Area2D" parent="Node2D/StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D/Area2D2"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_kui8g")
 
 [node name="Marker2D" type="Marker2D" parent="." groups=["auau"]]
 position = Vector2(679, 442)
@@ -120,9 +122,15 @@ position = Vector2(952, 255)
 [node name="Marker2D4" type="Marker2D" parent="." groups=["auau"]]
 position = Vector2(667, 237)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(673, 148)
-navigation_polygon = SubResource("NavigationPolygon_ltdpr")
-
 [node name="LazyDog" parent="." instance=ExtResource("9_g8br4")]
 position = Vector2(667, 237)
+
+[node name="Chest" type="Sprite2D" parent="."]
+position = Vector2(675, 244)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("10_lo1gm")
+hframes = 6
+frame = 5
+
+[connection signal="body_entered" from="Node2D/StaticBody2D/Area2D2" to="Node2D/Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Node2D/StaticBody2D/Area2D2" to="Node2D/Player" method="_on_area_2d_2_body_exited"]

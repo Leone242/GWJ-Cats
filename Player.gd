@@ -37,13 +37,13 @@ func show_animation(anim_sprite):
 		"idle": get_node("idle").show()
 		"walk": get_node("walk").show()
 		
+	
 
-
-func _on_area_2d_body_entered(body):
+func _on_area_2d_2_body_entered(body):
 	if body.name == "Player":
 		is_hidden = true
 
 
-func _on_area_2d_body_exited(body):
+func _on_area_2d_2_body_exited(body):
 	if body.name == "Player":
 		is_hidden = false
