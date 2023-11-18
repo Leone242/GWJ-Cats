@@ -28,7 +28,6 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		chase = true
 		get_node("Sprite2D").show()
-		print("alert")
 
 
 func _on_area_2d_body_exited(body):
@@ -40,4 +39,3 @@ func _on_area_2d_body_exited(body):
 func _on_dog_house_body_entered(body):
 	if body.name == "LazyDog":
 		get_node("Sprite2D").hide()
-		print("hide")

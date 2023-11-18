@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnbngunaxijnb"
+path="res://.godot/imported/cheap song.mp3-995cb4fe6f2f38f31983d17812840c20.mp3str"
+
+[deps]
+
+source_file="res://Audio/cheap song.mp3"
+dest_files=["res://.godot/imported/cheap song.mp3-995cb4fe6f2f38f31983d17812840c20.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

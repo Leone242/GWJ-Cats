@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://i471nlg56smq"]
+[gd_scene load_steps=4 format=3 uid="uid://i471nlg56smq"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_qwc5s"]
+[ext_resource type="AudioStream" uid="uid://sc22xeqh0gg6" path="res://Audio/btn1.mp3" id="2_fg5kg"]
+[ext_resource type="AudioStream" uid="uid://s5e8s3cbmy4a" path="res://Audio/btn2.mp3" id="3_rolv5"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_qwc5s")
@@ -46,6 +48,50 @@ offset_right = 675.0
 offset_bottom = 38.0
 text = "X"
 
+[node name="TabBar" type="TabBar" parent="OptionPanel"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 81.0
+offset_right = 433.0
+offset_bottom = 146.0
+tab_count = 4
+tab_0/title = "test"
+tab_1/title = "test 2"
+tab_2/title = "test 3"
+tab_3/title = "test 4"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 136.0
+offset_top = 152.0
+offset_right = 360.0
+offset_bottom = 465.0
+theme_override_constants/separation = 155
+
+[node name="Title" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "TITLE"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="placeholder" type="Label" parent="VBoxContainer2/Panel"]
+layout_mode = 2
+offset_top = -75.0
+offset_right = 224.0
+offset_bottom = -49.0
+text = "image placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Btn1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fg5kg")
+
+[node name="Btn2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rolv5")
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
