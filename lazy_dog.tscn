@@ -30,6 +30,7 @@ shape = SubResource("CircleShape2D_iil2h")
 
 [node name="Bark" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_p3xwf")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

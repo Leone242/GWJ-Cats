@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://i471nlg56smq"]
+[gd_scene load_steps=6 format=3 uid="uid://i471nlg56smq"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_qwc5s"]
 [ext_resource type="AudioStream" uid="uid://sc22xeqh0gg6" path="res://Audio/btn1.mp3" id="2_fg5kg"]
+[ext_resource type="PackedScene" uid="uid://e1l2ncppdx11" path="res://Audio/audio_slider.tscn" id="2_g45n2"]
 [ext_resource type="AudioStream" uid="uid://s5e8s3cbmy4a" path="res://Audio/btn2.mp3" id="3_rolv5"]
+[ext_resource type="AudioStream" uid="uid://cnbngunaxijnb" path="res://Audio/cheap song.mp3" id="4_2jxul"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_qwc5s")
@@ -48,17 +50,57 @@ offset_right = 675.0
 offset_bottom = 38.0
 text = "X"
 
-[node name="TabBar" type="TabBar" parent="OptionPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionPanel"]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 81.0
-offset_right = 433.0
-offset_bottom = 146.0
-tab_count = 4
-tab_0/title = "test"
-tab_1/title = "test 2"
-tab_2/title = "test 3"
-tab_3/title = "test 4"
+offset_left = 313.0
+offset_top = 217.0
+offset_right = 594.0
+offset_bottom = 354.0
+theme_override_constants/separation = 43
+
+[node name="Master" parent="OptionPanel/VBoxContainer" instance=ExtResource("2_g45n2")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music" parent="OptionPanel/VBoxContainer" instance=ExtResource("2_g45n2")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFX" parent="OptionPanel/VBoxContainer" instance=ExtResource("2_g45n2")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="OptionPanel"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 41.0
+offset_right = 376.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 45
+text = "Audio"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="OptionPanel"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 201.0
+offset_right = 223.0
+offset_bottom = 344.0
+theme_override_constants/separation = 10
+
+[node name="master" type="Label" parent="OptionPanel/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Master"
+
+[node name="music" type="Label" parent="OptionPanel/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="sfx" type="Label" parent="OptionPanel/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SFX"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 offset_left = 136.0
@@ -87,9 +129,15 @@ vertical_alignment = 1
 
 [node name="Btn1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fg5kg")
+bus = &"SFX"
 
 [node name="Btn2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rolv5")
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2jxul")
+bus = &"Music"
 
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

@@ -286,3 +286,4 @@ limit_top = 0
 
 [node name="Meow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_143qv")
+bus = &"SFX"

@@ -1,6 +1,7 @@
 extends Node2D
 
-
+func _ready():
+	$Music.play()
 
 func _on_play_pressed():
 	$Btn2.play()
@@ -36,3 +37,6 @@ func _on_quit_mouse_entered():
 
 func _on_exit_options_mouse_entered():
 	$Btn1.play()
+
+
+		
