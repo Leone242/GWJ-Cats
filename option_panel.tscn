@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2qe5o6bdtcdl"]
+
+[ext_resource type="Script" path="res://option_panel.gd" id="1_a7v6a"]
+[ext_resource type="PackedScene" uid="uid://e1l2ncppdx11" path="res://Audio/audio_slider.tscn" id="1_mnxbc"]
+
+[node name="OptionPanel" type="Panel"]
+visible = false
+offset_left = 239.0
+offset_top = 63.0
+offset_right = 921.0
+offset_bottom = 558.0
+script = ExtResource("1_a7v6a")
+
+[node name="ExitOptions" type="Button" parent="."]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 6.0
+offset_right = 675.0
+offset_bottom = 38.0
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 217.0
+offset_right = 594.0
+offset_bottom = 354.0
+theme_override_constants/separation = 43
+
+[node name="Master" parent="VBoxContainer" instance=ExtResource("1_mnxbc")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music" parent="VBoxContainer" instance=ExtResource("1_mnxbc")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFX" parent="VBoxContainer" instance=ExtResource("1_mnxbc")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 41.0
+offset_right = 376.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 45
+text = "Audio"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 201.0
+offset_right = 223.0
+offset_bottom = 344.0
+theme_override_constants/separation = 10
+
+[node name="master" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Master"
+
+[node name="music" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="sfx" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+
+[connection signal="pressed" from="ExitOptions" to="." method="_on_exit_options_pressed"]
