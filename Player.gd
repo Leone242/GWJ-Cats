@@ -25,10 +25,11 @@ func _physics_process(delta):
 		
 func _process(delta):
 	if Input.is_action_just_pressed("meow"):
-		print("meow")
+		$Meow.play()
 	if Input.is_action_just_pressed("interact"):
 		print("interact")
-
+		
+	
 
 func show_animation(anim_sprite):
 	get_node("idle").hide()

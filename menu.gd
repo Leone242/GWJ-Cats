@@ -13,6 +13,7 @@ func _on_options_pressed():
 
 func _on_quit_pressed():
 	$Btn2.play()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
 	
 
@@ -26,12 +27,12 @@ func _on_play_mouse_entered():
 
 
 func _on_options_mouse_entered():
-	pass # Replace with function body.
+	$Btn1.play()
 
 
 func _on_quit_mouse_entered():
-	pass # Replace with function body.
+	$Btn1.play()
 
 
 func _on_exit_options_mouse_entered():
-	pass # Replace with function body.
+	$Btn1.play()

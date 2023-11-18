@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://b53qu76ht03nn"]
+[gd_scene load_steps=29 format=3 uid="uid://b53qu76ht03nn"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_25it2"]
 [ext_resource type="Texture2D" uid="uid://brdhy31rpihe0" path="res://placeholders/Cat-01-3r.png" id="1_dkuyy"]
+[ext_resource type="AudioStream" uid="uid://kcrcf8ltix2x" path="res://Audio/miau.mp3" id="3_143qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejpva"]
 size = Vector2(21, 13)
@@ -282,3 +283,6 @@ frame = 4
 zoom = Vector2(1.8, 1.8)
 limit_left = 0
 limit_top = 0
+
+[node name="Meow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_143qv")

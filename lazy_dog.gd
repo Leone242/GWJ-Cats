@@ -28,6 +28,7 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		chase = true
 		get_node("Sprite2D").show()
+		$Bark.play()
 
 
 func _on_area_2d_body_exited(body):
