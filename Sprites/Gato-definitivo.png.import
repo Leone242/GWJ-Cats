@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k5rr7ayf2nx"
-path="res://.godot/imported/GAto.png-04be4e796a96983475dd2d86a54fed5b.ctex"
+uid="uid://cpkduqdddu22h"
+path="res://.godot/imported/Gato-definitivo.png-0036ad46adfb1450ad5946196a9e7de9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GAto.png"
-dest_files=["res://.godot/imported/GAto.png-04be4e796a96983475dd2d86a54fed5b.ctex"]
+source_file="res://Sprites/Gato-definitivo.png"
+dest_files=["res://.godot/imported/Gato-definitivo.png-0036ad46adfb1450ad5946196a9e7de9.ctex"]
 
 [params]
 
