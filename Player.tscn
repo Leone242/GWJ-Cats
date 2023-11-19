@@ -277,7 +277,7 @@ visible = false
 texture = SubResource("CompressedTexture2D_8xufw")
 hframes = 3
 vframes = 4
-frame = 4
+frame = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)

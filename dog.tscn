@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://muwc4vmjpsl2"]
 
 [ext_resource type="Script" path="res://dog.gd" id="1_8x8jk"]
-[ext_resource type="Texture2D" uid="uid://ba27yy30bffv3" path="res://placeholders/Dog 01-2.png" id="1_orxq4"]
+[ext_resource type="Texture2D" uid="uid://bex034srxyrvo" path="res://Sprites/Lazy_Dog.png" id="2_ktw12"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0ujt"]
-size = Vector2(20, 24)
+size = Vector2(16, 22)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83de2"]
 radius = 141.004
@@ -13,13 +13,13 @@ radius = 141.004
 script = ExtResource("1_8x8jk")
 
 [node name="Dog01-2" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_orxq4")
-hframes = 3
-vframes = 4
+scale = Vector2(0.0375, 0.0375)
+texture = ExtResource("2_ktw12")
+hframes = 11
+region_rect = Rect2(46, 2, 380, 627)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_i0ujt")
 
 [node name="Area2D" type="Area2D" parent="."]
