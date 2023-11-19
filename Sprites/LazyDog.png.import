@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm8v7xnldn2ud"
-path="res://.godot/imported/Lazy_Dog_definitivo.png-6cfeaca77ceffa14e0e9f56e3c473cc8.ctex"
+uid="uid://cdw7owm5rnhq8"
+path="res://.godot/imported/LazyDog.png-cafbdd563f21fd06b990413e7a7359cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Lazy_Dog_definitivo.png"
-dest_files=["res://.godot/imported/Lazy_Dog_definitivo.png-6cfeaca77ceffa14e0e9f56e3c473cc8.ctex"]
+source_file="res://Sprites/LazyDog.png"
+dest_files=["res://.godot/imported/LazyDog.png-cafbdd563f21fd06b990413e7a7359cb.ctex"]
 
 [params]
 
